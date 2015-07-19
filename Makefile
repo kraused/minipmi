@@ -6,7 +6,7 @@ else
 endif
 
 CC       = gcc
-CFLAGS   = -O0 -ggdb -DDEBUG
+CFLAGS   = -O1 -ggdb
 CPPFLAGS =
 AR       = ar
 ARFLAGS  = rcu

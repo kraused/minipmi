@@ -8,8 +8,8 @@
  * management interface standards. 
  */
 
-#define MINIPMI_MAJOR		0
-#define MINIPMI_MINOR		1
+#define MINIPMI_MAJOR		1
+#define MINIPMI_MINOR		0
 
 #define MINIPMI_BUFLEN  	1024	/* == PMIU_MAXLINE */
 /* Maximal number of key-value pairs in a command.
