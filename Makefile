@@ -1,4 +1,7 @@
 
+VERSION    = 1
+PATCHLEVEL = 0
+
 ifeq ("$(origin V)", "command line")
 	Q = 
 else
@@ -38,6 +41,15 @@ all    : libminipmi.a $(tests)
 libminipmi.a: $(minipmi-obj)
 	@echo " "AR $@
 	$(Q)$(AR) $(ARFLAGS) $@ $^
+
+tar:
+	python2 tar.py minipmi $(VERSION).$(PATCHLEVEL)
+
+install:
+	install -m0755 -d $(PREFIX)/usr/lib64/
+	install -m0644 libminipmi.a $(PREFIX)/usr/lib64/libminipmi.a
+	install -m0755 -d $(PREFIX)/usr/include/
+	install -m0644 minipmi.h $(PREFIX)/usr/include/minipmi.h
 
 clean:
 	rm -f $(minipmi-obj) libminipmi.a $(tests)
